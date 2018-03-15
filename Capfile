@@ -15,8 +15,6 @@ require "capistrano/deploy"
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
-require_relative '../lib/capistrano/django'
-
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
