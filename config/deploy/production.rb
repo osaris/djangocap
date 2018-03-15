@@ -3,14 +3,11 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "capython.srvz-webapp.he-arc.ch", user: "poweruser", roles: %w{app db web}, port: 2551
+server "capython.srvz-webapp.he-arc.ch", user: "poweruser", roles: %w{app db web}, port: 2251
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-set :nginx, true
-set :deploy_to, '/var/www/djangocap'
-set :wsgi_file, 'djangocap.wsgi'
-set :django_settings, 'production'
+set :deploy_to, "/var/www/#{fetch(:application)}"
 
 # role-based syntax
 # ==================

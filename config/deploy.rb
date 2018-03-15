@@ -4,6 +4,36 @@ lock "~> 3.10.1"
 set :application, "djangocap"
 set :repo_url, "git@github.com:osaris/djangocap.git"
 
+# see http://capistranorb.com/documentation/getting-started/flow/
+after 'deploy:updating', 'python:create_venv'
+after 'deploy:publishing', 'uwsgi:restart'
+
+namespace :uwsgi do
+
+    desc 'Restart application'
+    task :restart do
+        on roles(:web) do |h|
+            execute :sudo, 'sv reload uwsgi'
+        end
+    end
+end
+
+namespace :python do
+
+    def venv_path
+        File.join(shared_path, 'env')
+    end
+
+    desc 'Create venv'
+    task :create_venv do
+        on roles([:app, :web]) do |h|
+            execute "python3.6 -m venv #{venv_path}"
+            execute "source #{venv_path}/bin/activate"
+            execute "#{venv_path}/bin/pip install -r #{release_path}/requirements.txt"
+        end
+    end
+end
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
