@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "capython.srvz-webapp.he-arc.ch", user: "poweruser", roles: %w{app db web}, port: 2251
+server "capi.srvz-webapp.he-arc.ch", user: "poweruser", roles: %w{app db web}, port: 2280
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
