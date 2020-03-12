@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'capistrano'
+gem 'capistrano-ssh-doctor',  git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
+
 # for ed25519 keys
-gem 'rbnacl', '>= 3.2', '< 5.0'
-gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
-gem 'rbnacl-libsodium'
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
