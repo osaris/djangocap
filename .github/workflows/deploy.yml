@@ -17,11 +17,12 @@ jobs:
         with:
           bundler-cache: true
       - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+        uses: webfactory/ssh-agent@v0.5.1
         with:
-          key: ${{ secrets.SSH_KEY }}
-          name: id_ed25519
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+      - name: Add known host
+        run: |
+          ssh-keyscan -p ${{ secrets.DEPLOY_HOST_SSH_PORT }} ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy
         run: |
           bundle exec cap production deploy
