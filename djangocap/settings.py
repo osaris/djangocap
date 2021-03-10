@@ -25,7 +25,7 @@ SECRET_KEY = 'kg0=6f98!wusww7ammva$t1hy-9z_q7iq*%8_4ehmm!0prk+cv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['capython.srvz-webapp.he-arc.ch']
+ALLOWED_HOSTS = ['capi.srvz-webapp.he-arc.ch']
 
 
 # Application definition

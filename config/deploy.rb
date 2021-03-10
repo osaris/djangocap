@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "djangocap"
-set :repo_url, "git@github.com:osaris/djangocap.git"
+set :repo_url, "https://github.com/osaris/djangocap.git"
 
 # see http://capistranorb.com/documentation/getting-started/flow/
 after 'deploy:updating', 'python:create_venv'
