@@ -4,7 +4,7 @@ chardet==3.0.4
 cloud-init==20.4
 command-not-found==0.3
 configobj==5.0.6
-cryptography==1.2.3
+cryptography==3.3.2
 Django==2.2.19
 idna==2.0
 img2pdf==0.3.3
