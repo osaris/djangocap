@@ -13,7 +13,7 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v2
       - name: Set up Ruby 2.6.x
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Install SSH key
