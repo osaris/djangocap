@@ -24,4 +24,4 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: Deploy
         run: |
-          cap production deploy
+          bundle exec cap production deploy
